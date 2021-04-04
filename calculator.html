@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <style>
+        .calculator{
+            border-radius: 20px;
+            width: 280px;
+            height: 350px;
+            display: inline-block;
+            background: black;
+            text-align: center;
+            position: relative;
+            margin-top: 20%;
+            margin-left: 40%;
+        }
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" placeholder="рост в см" id='rost'/>
+    <input type="number" placeholder="вес в кг" id='ves'/>
+    <input type="number" placeholder="возраст" id='vozrast'/>
+    <select id='select' required>
+        <option disabled>Выберите физ. нагрузку</option>
+        <option value = "1.2"  class="option">минимальная физ. активность</option>
+        <option value = "1.375" class="option">Слабая физ. активность</option>
+        <option value = "1.55" class="option">Средняя физ. активность</option>
+        <option value = "1.9" class="option">Экстра физ. активность</option>
+        <option value = "1.725" class="option">Высокая физ. активность</option>
+    </select>
+    <button id="button">submit</button>
+    <p id="rezult"></p>
+    <script>
+        select.addEventListener('input', (e)=>{
+            A = parseFloat(e.target.value)
+        })
+        vozrast.addEventListener('change', (e)=>{
+            Vo = Number(e.target.value)
+        })
+        rost.addEventListener('change', (e)=>{
+            Ro = Number(e.target.value)
+        })
+        ves.addEventListener('change', (e)=>{
+            Ves = Number(e.target.value)
+        })
+        button.addEventListener('click', (e)=>{
+            console.log(A)
+            console.log(Vo, "-Vo")
+            console.log(Ro, "-Ro")
+            console.log(Ves, "-Ves")
+            let answer = Number((10 * Number(Ves) + 6.25 * Number(Ro) - 5 * Number(Vo) + 5) * Number(A))
+            console.log(answer, "kalori" )
+        })
+        
+        
+        
+        
+    </script>
+</body>
+</html>
